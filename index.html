@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reversed Name Greeting</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Additional styles if needed */
+    </style>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const nameInput = document.getElementById('nameInput');
+            const greeting = document.getElementById('greeting');
+
+            nameInput.addEventListener('input', function() {
+                const reversedName = nameInput.value.split('').reverse().join('');
+                greeting.textContent = `Hello ${reversedName}`;
+            });
+        });
+    </script>
+</head>
+<body class="bg-gray-100 flex items-center justify-center h-screen">
+    <div class="text-center">
+        <input id="nameInput" type="text" placeholder="Enter Name Here" class="shadow appearance-none border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+        <div id="greeting" class="mt-4 text-lg font-semibold">Hello [Name]</div>
+    </div>
+</body>
+</html>
